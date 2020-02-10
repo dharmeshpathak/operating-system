@@ -31,6 +31,11 @@ for(i=0;i<n;i++)
         }
     }
  }
+   
+   //--------------from here the value of index 1 and id 2 changes automatically.
+   
+   
+   
  printf(" for 2nd process at is %d and bt is %d \n\n",at[1],bt[1]);
 
  ct[0]=at[0]+bt[0];
@@ -43,6 +48,8 @@ for(i=0;i<n;i++)
  printf(" for 2nd process at is %d and bt is %d \n\n",at[1],bt[1]);
  sum1=sum1+tat[0];
  printf(" for 2nd process at is %d and bt is %d \n\n",at[1],bt[1]);
+   
+   //Here temp1 is assigned to c[0].To calculate or save the value of completion time of last process.
 
 
 temp1=ct[0];
@@ -53,7 +60,8 @@ printf(" for 2nd process at is %d and bt is %d \n\n",at[1],bt[1]);
 
     if(at[i]>temp1){
             printf("i am also in if block \n\n");
-            while(temp1<at[i])
+            while(temp1<at[i]) //------Here the case when the arrival time of next process is greater than the completion time of last process.
+                                 //-----------So the temp1 is increamented by 1 until it become equal to completion time of last process. 
             {temp1=temp1+1;}
 
         ct[i]=temp1+bt[i];
